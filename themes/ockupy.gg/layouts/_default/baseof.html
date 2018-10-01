@@ -1,0 +1,75 @@
+<!doctype html>
+<html prefix="og: http://ogp.me/ns#">
+
+<head>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MGKN89D');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <title>
+    {{ block "title" . }} {{ .Title }}{{ if ne .Title .Site.Title }} | {{ .Site.Title }}{{ end }} {{ end }}
+  </title>
+
+  <meta name="twitter:card" content="summary" />
+  <!-- <meta name="twitter:site" content="@ockupy" /> -->
+  <meta name="twitter:title" content="{{ .Site.Title }}" />
+  <meta name="twitter:description" content="{{ $.Site.Params.description }}" />
+  <!-- <meta name="twitter:image" content="/img/twitter-card.png" /> -->
+  <meta name="description" content="{{ $.Site.Params.description }}">
+  <meta property="og:title" content="{{ .Site.Title }}" />
+  <meta property="og:description" content="{{ $.Site.Params.description }}">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <!-- <meta property="og:image" content="/img/logo.png" /> -->
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="/css/particles.css">
+  <link rel="stylesheet" href="/css/odometer.css">
+  <link rel="stylesheet" href="/css/style.css">
+  {{ if .RSSLink }}
+  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{ end }}
+
+  {{ partial "mixpanel" . }}
+
+</head>
+
+<body class="">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGKN89D"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {{ block "header" . }} {{ partial "header" . }} {{ end }}
+  <main>
+    {{ block "body" . }} {{ block "main" . }} {{ end }} {{ end }}
+  </main>
+  {{ block "footer" . }} {{ partial "footer" . }} {{ end }}
+</body>
+
+</html>
