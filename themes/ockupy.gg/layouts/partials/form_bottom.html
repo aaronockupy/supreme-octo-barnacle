@@ -1,4 +1,4 @@
-<form name="contact_bottom" method="POST" netlify>
+<form id="contact_bottom" name="contact_bottom" method="POST" netlify>
   <div class="form-row">
     <div class="form-group col-md-6">
       <input type="text" class="form-control" id="Name" name="name" placeholder="Name">
@@ -23,3 +23,6 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<script type="text/javascript">
+  mixpanel.track_forms('#contact_bottom', 'Contact Submission');
+</script>
