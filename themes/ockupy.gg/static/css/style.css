@@ -145,6 +145,7 @@ section {
   background: #00fe82;
   border-color: #00fe82;
   border-width: 2px;
+  border-radius: 100%;
   color: #210024;
   -webkit-box-shadow: 0 0 0 0 rgba(#73feba, .5);
           box-shadow: 0 0 0 0 rgba(#73feba, .5);
