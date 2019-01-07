@@ -1,8 +1,11 @@
-<form id="contact_bottom" name="contact_bottom" method="POST" netlify>
+<form id="contact_bottom" name="contact_bottom" method="POST" netlify-honeypot="surname" netlify>
   <div class="form-row">
     <div class="form-group col-md-6">
       <input type="text" class="form-control" id="Name" name="name" placeholder="Name">
     </div>
+    <p class="d-none">
+      <label>Don’t fill this out if you're human: <input name="surname" /></label>
+    </p>
     <div class="form-group col-md-6">
       <input type="text" class="form-control" id="Company" name="company" placeholder="Company">
     </div>
